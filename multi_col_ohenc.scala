@@ -1,3 +1,5 @@
+def mul_col_one_hot(input_data: org.apache.spark.sql.DataFrame,arr_cols: Array[String]):org.apache.spark.sql.DataFrame = {
+// ------------------- Single column one hot encoder ----------------------------// 
 def sin_col_one_hot (one_df: org.apache.spark.sql.DataFrame,one_col: String): 
  org.apache.spark.sql.DataFrame = {
    
@@ -16,8 +18,7 @@ val encoder = new OneHotEncoder()
 val encoded = encoder.transform(indexed).drop(s"${one_col}_Index")
 return(encoded)
 }
-def mul_col_one_hot(input_data: org.apache.spark.sql.DataFrame,arr_cols: Array[String]):org.apache.spark.sql.DataFrame = {
-  
+// --------------------- Single column one hot encoder -- Ending---------------------------// 
   if(arr_cols.size == 1){
     val final_df = sin_col_one_hot(input_data,arr_cols(0))
     return(final_df)
