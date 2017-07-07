@@ -13,3 +13,6 @@ val actualDf = sourceDf.withColumn(
 )
 
 actualDf.show()
+// --------  null value finding --------- //
+val col_name = "Cabin"
+titanic.where(s"${col_name} is null").count
